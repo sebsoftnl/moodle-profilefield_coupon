@@ -11,7 +11,7 @@ variables:
   # If we want to ignore some templates, provide them here.
   #MUSTACHE_IGNORE_NAMES: "<file>.mustache, <file2>.mustache, ..., <filen>.mustache"
   PLUGIN: 'profilefield_coupon'
-  PATHNAME: 'user/profiel/field/coupon'
+  PATHNAME: 'user/profile/field/coupon'
   REPOURL: 'https://github.com/sebsoftnl/moodle-profilefield_coupon'
   REPOSYS: 'git'
   # Moodle auto format = 0, Markdown = 4, Flat txt = 2
