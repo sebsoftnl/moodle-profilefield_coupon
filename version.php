@@ -21,22 +21,18 @@
  * Encoding     UTF-8
  *
  * @package     profilefield_coupon
- * @copyright   2022 Ing. R.J. van Dongen
- * @author      Ing. R.J. van Dongen <rogier@sebsoft.nl>
+ * @copyright   Sebsoft.nl
+ * @author      RvD <helpdesk@sebsoft.nl>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'profilefield_coupon';
-$plugin->version   = 2022120500;
-$plugin->requires  = 2021051100;
-$plugin->release = '1.0.0 (build 2022120500)';
-$plugin->maturity = MATURITY_ALPHA;
+$plugin->version = 2024040900;
+$plugin->requires = 2022041900; // YYYYMMDDHH (This is the release version for Moodle 4.0).
+$plugin->release = '1.0.1 (build 2024040900)';
+$plugin->maturity = MATURITY_STABLE;
 $plugin->dependencies = [
-    'block_coupon' => 2022090100
-];
-$plugin->supported = [
-    400,
-    410
+    'block_coupon' => 2024040900,
 ];
