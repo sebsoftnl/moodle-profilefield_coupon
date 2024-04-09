@@ -15,14 +15,14 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * COupon profile field.
+ * Coupon profile field.
  *
  * File         field.class.php
  * Encoding     UTF-8
  *
  * @package     profilefield_coupon
- * @copyright   2022 Ing. R.J. van Dongen
- * @author      Ing. R.J. van Dongen <rogier@sebsoft.nl>
+ * @copyright   Sebsoft.nl
+ * @author      RvD <helpdesk@sebsoft.nl>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -30,8 +30,8 @@
  * Class profile_field_coupon
  *
  * @package     profilefield_coupon
- * @copyright   2022 Ing. R.J. van Dongen
- * @author      Ing. R.J. van Dongen <rogier@sebsoft.nl>
+ * @copyright   Sebsoft.nl
+ * @author      RvD <helpdesk@sebsoft.nl>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class profile_field_coupon extends profile_field_base {
@@ -49,7 +49,7 @@ class profile_field_coupon extends profile_field_base {
      *    with user data. (If $fielddata->hasuserdata is empty, user data is not available and we should use default data).
      *    If this parameter is passed, constructor will not call load_data() at all.
      */
-    public function __construct($fieldid=0, $userid=0, $fielddata=null) {
+    public function __construct($fieldid = 0, $userid = 0, $fielddata = null) {
         $this->issignup = ($userid <= 0);
         parent::__construct($fieldid, $userid, $fielddata);
     }
@@ -90,7 +90,7 @@ class profile_field_coupon extends profile_field_base {
      * @since Moodle 3.2
      */
     public function get_field_properties() {
-        return array(\block_coupon\helper::get_code_param_type(), NULL_NOT_ALLOWED);
+        return [\block_coupon\helper::get_code_param_type(), NULL_NOT_ALLOWED];
     }
 
     /**
@@ -100,7 +100,7 @@ class profile_field_coupon extends profile_field_base {
     public function edit_load_user_data($user) {
         if ($this->data !== null) {
             $this->data = clean_text($this->data, $this->dataformat);
-            $user->{$this->inputname} = array('text' => $this->data, 'format' => $this->dataformat);
+            $user->{$this->inputname} = ['text' => $this->data, 'format' => $this->dataformat];
         }
     }
 
@@ -135,14 +135,14 @@ class profile_field_coupon extends profile_field_base {
     public function edit_validate_field($usernew) {
         global $DB;
 
-        $errors = array();
+        $errors = [];
         // Get input value.
         if (isset($usernew->{$this->inputname}) && !empty($usernew->{$this->inputname})) {
             $value = $usernew->{$this->inputname};
-            $conditions = array(
+            $conditions = [
                 'submission_code' => $value,
                 'claimed' => 0,
-            );
+            ];
             $coupon = $DB->get_record('block_coupon', $conditions);
             if (empty($coupon)) {
                 $errors[$this->inputname] = get_string('error:invalid_coupon_code', 'block_coupon');
