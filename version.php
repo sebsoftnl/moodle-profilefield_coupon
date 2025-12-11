@@ -29,11 +29,11 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'profilefield_coupon';
-$plugin->version = 2025120100;
-$plugin->requires = 2022041900; // YYYYMMDDHH (This is the release version for Moodle 4.0).
-$plugin->release = '1.0.2 (build 2025120100)';
+$plugin->version = 2025120101;
+$plugin->requires = 2024100700; // Moodle 4.5+.
+$plugin->release = '1.0.3 (build 2025120101)';
 $plugin->maturity = MATURITY_STABLE;
-$plugin->incompatible = 405;
+$plugin->supported = [405];
 $plugin->dependencies = [
     'block_coupon' => 2024040900,
 ];
