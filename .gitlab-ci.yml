@@ -51,6 +51,12 @@ variables:
     - for i in ${failures[@]}; do echo "$i -- FAIL"; done;
     - if [ "${#failures[@]}" -gt "0" ]; then echo "${#failures[@]} jobs failed"; exit 1; fi;
 
+Moodle 4.4:
+  <<: *job_definition
+  variables:
+    MOODLE_BRANCH: "MOODLE_404_STABLE"
+    MOODLE_VERSION: 404
+
 Moodle 4.3:
   <<: *job_definition
   variables:

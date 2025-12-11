@@ -35,7 +35,6 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class profile_define_coupon extends profile_define_base {
-
     /**
      * Add elements for creating/editing a text profile field.
      * @param moodleform $form
@@ -64,10 +63,13 @@ class profile_define_coupon extends profile_define_base {
         }
 
         $mform->insertElementBefore(
-                $mform->createElement('static', '_remark', '',
-                        get_string('explain:disabledfields', 'profilefield_coupon')),
-                'required'
-            );
+            $mform->createElement(
+                'static',
+                '_remark',
+                '',
+                get_string('explain:disabledfields', 'profilefield_coupon')
+            ),
+            'required'
+        );
     }
-
 }

@@ -26,10 +26,9 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'Coupon processor profile field';
-$string['privacy:metadata'] = 'The coupon processor profile field plugin does not store any personal data.';
 $string['explain:disabledfields'] = '<div class="alert-warning">The coupon field is only a data processor. Some of the fields below have been forced
 with certain values to facilitate in only displaying the coupon field on signup forms.</div>';
 $string['explain:nosettings'] = '<div class="alert-info">No specific settings are required. Please note this plugin
 does not store any kind of data because it serves as a coupon/voucher code handler during signup.</div>';
-
+$string['pluginname'] = 'Coupon processor profile field';
+$string['privacy:metadata'] = 'The coupon processor profile field plugin does not store any personal data.';

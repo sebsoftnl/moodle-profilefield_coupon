@@ -35,7 +35,6 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class profile_field_coupon extends profile_field_base {
-
     /**
      * @var bool
      */
@@ -146,13 +145,14 @@ class profile_field_coupon extends profile_field_base {
             $coupon = $DB->get_record('block_coupon', $conditions);
             if (empty($coupon)) {
                 $errors[$this->inputname] = get_string('error:invalid_coupon_code', 'block_coupon');
-            } else if (!is_null($coupon->userid) &&
-                    $coupon->typ != \block_coupon\coupon\generatoroptions::ENROLEXTENSION) {
+            } else if (
+                    !is_null($coupon->userid) &&
+                    $coupon->typ != \block_coupon\coupon\generatoroptions::ENROLEXTENSION
+            ) {
                 $errors[$this->inputname] = get_string('error:coupon_already_used', 'block_coupon');
             }
         }
 
         return $errors;
     }
-
 }
