@@ -33,7 +33,7 @@ $plugin->version = 2025120101;
 $plugin->requires = 2024100700; // Moodle 4.5+.
 $plugin->release = '1.0.3 (build 2025120101)';
 $plugin->maturity = MATURITY_STABLE;
-$plugin->supported = [405];
+$plugin->supported = [405, 502];
 $plugin->dependencies = [
     'block_coupon' => 2024040900,
 ];
